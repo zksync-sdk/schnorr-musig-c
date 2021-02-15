@@ -92,17 +92,17 @@ enum MusigRes schnorr_musig_receive_precommitments(struct MusigSigner *signer,
                                                    size_t input_len,
                                                    struct Commitment *commitment);
 
+enum MusigRes schnorr_musig_receive_signature_shares(struct MusigSigner *signer,
+                                                     const uint8_t *input,
+                                                     size_t input_len,
+                                                     struct AggregatedSignature *signature_shares);
+
 enum MusigRes schnorr_musig_sign(struct MusigSigner *signer,
                                  const uint8_t *private_key,
                                  size_t private_key_len,
                                  const uint8_t *message,
                                  size_t message_len,
                                  struct Signature *signature);
-
-enum MusigRes schnorr_musig_signature_shares(struct MusigSigner *signer,
-                                             const uint8_t *input,
-                                             size_t input_len,
-                                             struct AggregatedSignature *signature_shares);
 
 enum MusigRes schnorr_musig_verify(const uint8_t *message,
                                    size_t message_len,

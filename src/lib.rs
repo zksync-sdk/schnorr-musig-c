@@ -207,7 +207,7 @@ pub unsafe extern "C" fn schnorr_musig_sign(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn schnorr_musig_signature_shares(
+pub unsafe extern "C" fn schnorr_musig_receive_signature_shares(
     signer: &mut MusigSigner,
     input: *const u8,
     input_len: libc::size_t,

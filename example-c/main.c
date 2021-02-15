@@ -54,7 +54,7 @@ int test_single() {
     print_bytes(signature->data, 32);
 
     struct AggregatedSignature * aggregated_signature = malloc(sizeof(struct AggregatedSignature));
-    result += schnorr_musig_signature_shares(signer, signature->data, 32, aggregated_signature);
+    result += schnorr_musig_receive_signature_shares(signer, signature->data, 32, aggregated_signature);
     print_bytes(aggregated_signature->data, 64);
 
     struct AggregatedPublicKey * aggregated_pubkey = malloc(sizeof(struct AggregatedPublicKey));
@@ -156,7 +156,7 @@ int test_multiple() {
     for (size_t i = 0; i < PARTICIPIANTS; ++i) {
         struct AggregatedSignature * aggregated_signature = malloc(sizeof(struct AggregatedSignature));
         
-        result += schnorr_musig_signature_shares(signers[i], signatures, TOTAL_SIZE, aggregated_signature);
+        result += schnorr_musig_receive_signature_shares(signers[i], signatures, TOTAL_SIZE, aggregated_signature);
         memcpy(agg_signatures + i * AGG_SIG_SIZE, aggregated_signature->data, AGG_SIG_SIZE * sizeof(uint8_t));
         free(aggregated_signature);
     }

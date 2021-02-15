@@ -50,4 +50,4 @@ cbindgen: setup-rs
 	cbindgen --config ./cbindgen.toml --crate musig-c --output ./schnorr_musig.h
 
 run_example:
-	cd musig-c/example-c && cc main.c -o example -l musig_c  -L../../target/release && ./example
+	cd example-c && cc main.c -o example -l musig_c  -L../target/release && ./example
