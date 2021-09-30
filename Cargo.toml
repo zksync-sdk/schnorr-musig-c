@@ -1,8 +1,8 @@
 [package]
 name = "musig-c"
 version = "0.0.1"
-authors = ["Maxim Fischuk <mfischuk@vareger.com>"]
-edition = "2018"
+authors = ["guanlong huang <gl041188@gmail.com>"]
+edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "staticlib"]
